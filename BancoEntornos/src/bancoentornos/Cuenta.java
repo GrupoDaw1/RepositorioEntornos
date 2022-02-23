@@ -95,7 +95,7 @@ public class Cuenta {
     float leerSaldo() { return saldo; } 
     
    
-    static int leerNOperaciones() { return nOp; } 
+//    static int leerNOperaciones() { return nOp; } 
     
     public void verCuenta(){
         
