@@ -20,8 +20,8 @@ public class Cuenta {
     Cliente titular; // Objeto contenido
     private float saldo;
     float interesAnual;
-    LinkedList <Movimiento>  movimientos;  //Colección contenida, puesto que el 
-                                           //tamaño puede ser muy dispar seha 
+    //LinkedList <Movimiento>  movimientos;  //Colección contenida, puesto que el 
+    Movimiento [] movimientos;                                       //tamaño puede ser muy dispar seha 
                                            //optado por LinkedList
     
     int nmovimientos;  // movimientos de esta cuenta
@@ -32,7 +32,8 @@ public class Cuenta {
         titular = aTitular;    
         saldo = 0;      
         interesAnual = aInteresAnual; //constructor con paramentros que crea una nueva cuenta sin movimientos 
-        movimientos = new LinkedList ();
+        //movimientos = new LinkedList ();
+        movimientos = new Movimiento[20];
         nmovimientos=0;
     
 
@@ -58,11 +59,13 @@ public class Cuenta {
          saldo = ois.readFloat();     
          interesAnual = ois.readFloat();   // Lectura de atributos de tipos básicos
          
-         movimientos = (LinkedList <Movimiento>) ois.readObject();// Lectura de la colección
+         //movimientos = (LinkedList <Movimiento>) ois.readObject();// Lectura de la colección
                         // se lee como se escribió, como un único objeto
                         // también debe realizar el downcasting
+                        
+        movimientos = (Movimiento[])ois.readObject();
          
-         nmovimientos = ois.readInt(); // Lectura de atributo de tipo básico  
+        nmovimientos = ois.readInt(); // Lectura de atributo de tipo básico  
      }
 
      /* En los dos métodos que siguen, es en el único lugar de la aplicación donde
@@ -70,19 +73,21 @@ public class Cuenta {
      yaque como hemos comentado fuera de las cuentas no tienen sentido.*/
     
     public void ingreso (float cantidad){
-        nmovimientos++;
+        //nmovimientos++;
         // Crea un movimiento del tipo ingreso, registrando el momento en que se
         // hace y actualizando el saldo que ademas se pasa ya actualizado como 
         // parámetro al nuevo movimiento
-        movimientos.add(new Movimiento(new Date(), 'I', cantidad, saldo += cantidad)); 
+        //movimientos.add(new Movimiento(new Date(), 'I', cantidad, saldo += cantidad)); 
+        movimientos[nmovimientos++]= new Movimiento(new Date(), 'I', cantidad, saldo += cantidad);
         nOp++;
     }
     public void reintegro (float cantidad){
-        nmovimientos++;
+        //nmovimientos++;
         // Crea un movimiento del tipo reintegro, registrando el momento en que se
         // hace y actualizando el saldo que ademas se pasa ya actualizado como 
         // parámetro al nuevo movimiento
-        movimientos.add(new Movimiento(new Date(), 'R', cantidad, saldo -= cantidad)); 
+        //movimientos.add(new Movimiento(new Date(), 'R', cantidad, saldo -= cantidad)); 
+        movimientos[nmovimientos++]= new Movimiento(new Date(), 'R', cantidad, saldo -= cantidad);
         nOp++;
         
     }
@@ -96,9 +101,13 @@ public class Cuenta {
         
         System.out.println("Numero: " + numero);
         System.out.println("Titular: " + titular.nombreCompleto() );
-        for(Movimiento movimiento : movimientos){//recorre la LinkedList y muestra todos sus movimientos
+        /*for(Movimiento movimiento : movimientos){//recorre la LinkedList y muestra todos sus movimientos
             movimiento.verMovimiento();                   
+        }*/
+        for (int i=0; i<nmovimientos;i++){
+            movimientos[i].verMovimiento();
         }
+        
         System.out.println("Saldo: " + saldo);
         
         
