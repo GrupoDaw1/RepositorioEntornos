@@ -72,15 +72,15 @@ public class Cuenta {
      pueden crearse movimientos, por eso éstos siempre están ligados a una cuenta
      yaque como hemos comentado fuera de las cuentas no tienen sentido.*/
     
-    public void ingreso (float cantidad){
-        //nmovimientos++;
-        // Crea un movimiento del tipo ingreso, registrando el momento en que se
-        // hace y actualizando el saldo que ademas se pasa ya actualizado como 
-        // parámetro al nuevo movimiento
-        //movimientos.add(new Movimiento(new Date(), 'I', cantidad, saldo += cantidad)); 
-        movimientos[nmovimientos++]= new Movimiento(new Date(), 'I', cantidad, saldo += cantidad);
-        nOp++;
-    }
+//    public void ingreso (float cantidad){
+//        //nmovimientos++;
+//        // Crea un movimiento del tipo ingreso, registrando el momento en que se
+//        // hace y actualizando el saldo que ademas se pasa ya actualizado como 
+//        // parámetro al nuevo movimiento
+//        //movimientos.add(new Movimiento(new Date(), 'I', cantidad, saldo += cantidad)); 
+//        movimientos[nmovimientos++]= new Movimiento(new Date(), 'I', cantidad, saldo += cantidad);
+//        nOp++;
+//    }
     public void reintegro (float cantidad){
         //nmovimientos++;
         // Crea un movimiento del tipo reintegro, registrando el momento en que se
