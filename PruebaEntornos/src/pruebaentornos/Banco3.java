@@ -13,7 +13,7 @@ public class Banco3 {
     
     public static void main(String[] args) throws IOException {
      /*  El siguiente código comentado se uso para crear un par de cuentas e introducir movimientos en ellas 
-       para finalmente grabarlas y poder después trabajar con ellas.
+       para finalmente grabarlas y poder después trabajar con ellas.asdf
         
         
         
