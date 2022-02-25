@@ -72,9 +72,9 @@ public class Banco3 {
             System.out.println("Error al leer datos");   
             return;  // Si los datos no son correctos el programa termina
         }
-        Cuenta c; 
+        Cuenta2 c; 
         try {   
-            c = new Cuenta(nc);// Constructor que lee del fichero los datos de la cuenta
+            c = new Cuenta2(nc);// Constructor que lee del fichero los datos de la cuenta
         }
         catch(Exception e) {   
             System.out.println("Imposible recuperar cuenta");    

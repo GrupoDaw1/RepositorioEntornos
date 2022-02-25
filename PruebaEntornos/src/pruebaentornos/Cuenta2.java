@@ -14,7 +14,7 @@ import java.util.LinkedList;
 /* Clase contenedora formada entre otros argumentos por un objeto de la clase 
    Cliente y una colección de objetos de la clase Movimiento */
 
-public class Cuenta {
+public class Cuenta2 {
     
     private long numero;
     Cliente titular; // Objeto contenido
@@ -27,7 +27,7 @@ public class Cuenta {
     int nmovimientos;  // movimientos de esta cuenta
     static int nOp = 0;// movimientos de todas las cuentas
     
-    public Cuenta(long aNumero, Cliente aTitular, float aInteresAnual) {    
+    public Cuenta2(long aNumero, Cliente aTitular, float aInteresAnual) {    
         numero = aNumero;    
         titular = aTitular;    
         saldo = 0;      
@@ -38,7 +38,7 @@ public class Cuenta {
 
     }
     
-     public Cuenta(long aNumero) throws FileNotFoundException, IOException,ClassNotFoundException 
+     public Cuenta2(long aNumero) throws FileNotFoundException, IOException,ClassNotFoundException 
      {   /* Constructor que crea el objeto  tomando los datos de un fichero cuyo
              nombre es el número de cuenta recibido como parámentro con la extensión
              cnt. Necesita por tanto que previamente se haya trabajado con esa cuenta 
