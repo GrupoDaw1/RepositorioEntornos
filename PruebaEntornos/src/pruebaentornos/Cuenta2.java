@@ -104,10 +104,10 @@ public class Cuenta2 {
         
     }   
     
-    public float verSaldo (){
-        return saldo ;
-        
-    }
+//    public float verSaldo (){
+//        return saldo ;
+//        
+//    }
     
    
     
