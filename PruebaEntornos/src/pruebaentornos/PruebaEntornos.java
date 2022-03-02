@@ -11,7 +11,7 @@ package pruebaentornos;
 public class PruebaEntornos {
 
     /**
-     * @param args the command line arguments
+     * @param args the command line argumentsS
      */
     public static void main(String[] args) {
         // TODO code application logic here
